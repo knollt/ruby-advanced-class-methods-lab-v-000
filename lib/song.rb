@@ -33,7 +33,7 @@ class Song
     result
   end
 
-  def find_or_create_by_name(title)
+  def self.find_or_create_by_name(title)
     result = self.find_by_name(title)
     if result
       result
@@ -42,7 +42,7 @@ class Song
     end
   end
 
-  def alphabetical
+  def self.alphabetical
     sorted = self.all.sort_by { |song| song.name  }
     sorted
   end
