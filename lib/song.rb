@@ -52,8 +52,11 @@ class Song
   end
 
   def self.create_by_name(filename)
-    result = self.new_from_filename(filename)
-    song.save
+      song = self.new 
+      song.name = filename.split(/[^a-zA-Z\s]|\s-\s/)[1] 
+      song.artist_name = filename.split(/[^a-zA-Z\s]|\s-\s/)[0]
+      song.save
+      song
   end
 
   def self.destroy_all
