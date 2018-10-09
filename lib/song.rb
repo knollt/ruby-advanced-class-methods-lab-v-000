@@ -54,5 +54,5 @@ class Song
     song.name = song_Array[1]
     song.artist_name = song_Array[0]
     song
-  end  
+  end
 end
