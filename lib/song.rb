@@ -47,4 +47,12 @@ class Song
     sorted
   end
 
+  def self.new_from_filename(filename)
+    song_Array = filename.split(" - ")
+    song_Array[1] = song_Array[1].chomp("mp3")
+    song = self.new
+    song.name = song_Array[1]
+    song.artist_name = song_Array[0]
+    song
+  end  
 end
